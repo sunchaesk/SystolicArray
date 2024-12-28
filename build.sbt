@@ -24,5 +24,4 @@ lazy val root = (project in file("."))
       "-P:chiselplugin:genBundleElements",
     ),
     addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % chiselVersion cross CrossVersion.full),
-    Compile / run / javaOptions ++= Seq("--target-dir", "generated")
   )

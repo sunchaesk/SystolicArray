@@ -33,7 +33,8 @@ object ProcessingElementDriver extends App {
   // create sv file
   ChiselStage.emitSystemVerilogFile(
     new ProcessingElement,
-    firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info")
+    Array("--target-dir", "generated/"),
+    firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info"),
   )
 
   // print to shell

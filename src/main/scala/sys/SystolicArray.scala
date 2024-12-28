@@ -41,7 +41,8 @@ import _root_.circt.stage.ChiselStage
 object SystolicArrayDriver extends App {
   ChiselStage.emitSystemVerilogFile(
     new SystolicArray,
-    firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info")
+    Array("--target-dir", "generated/"),
+    firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info"),
   )
 
   // print to shell
