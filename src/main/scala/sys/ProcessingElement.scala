@@ -28,6 +28,7 @@ class ProcessingElement (val input_bitwidth: Int = 8) extends Module {
 import _root_.circt.stage.ChiselStage
 
 object ProcessingElementDriver extends App {
+  // val verilog_content = ChiselStage.emitSystemVerilogFile(
   val verilog_content = ChiselStage.emitSystemVerilog(
     new ProcessingElement,
     firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info")
