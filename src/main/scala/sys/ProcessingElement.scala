@@ -29,6 +29,14 @@ import _root_.circt.stage.ChiselStage
 
 object ProcessingElementDriver extends App {
   // val verilog_content = ChiselStage.emitSystemVerilogFile(
+
+  // create sv file
+  ChiselStage.emitSystemVerilogFile(
+    new ProcessingElement,
+    firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info")
+  )
+
+  // print to shell
   val verilog_content = ChiselStage.emitSystemVerilog(
     new ProcessingElement,
     firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info")
